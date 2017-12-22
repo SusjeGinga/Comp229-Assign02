@@ -7,22 +7,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Comp229_Assign02
-{
-
-
-    public partial class SiteMaster
-    {
-
+namespace Comp229_Assign02 {
+    
+    
+    public partial class SiteMaster {
+        
         /// <summary>
-        /// HeadContent control.
+        /// logoLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
-
+        protected global::System.Web.UI.WebControls.HyperLink logoLink;
+        
+        /// <summary>
+        /// homeLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor homeLink;
+        
+        /// <summary>
+        /// titleLit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal titleLit;
+        
         /// <summary>
         /// MainContent control.
         /// </summary>

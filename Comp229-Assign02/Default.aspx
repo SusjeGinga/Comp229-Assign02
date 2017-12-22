@@ -2,41 +2,20 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <asp:Image ID="brandImg" runat="server" ImageUrl="~/Assets/brand.jpg" />
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
+    <div class="center">
+        <asp:PlaceHolder ID="welcomePL" runat="server">
+            <h3>Welcome to Centennial Survey Page</h3>
+        </asp:PlaceHolder>
+        <asp:PlaceHolder ID="purposePL" runat="server"><br />Purpose of this survey is to get student's experience about the college<br />
+        </asp:PlaceHolder>
+        <asp:Literal ID="privacyLit" runat="server">Our Privacy and Disclaimers are similar with</asp:Literal>
+        <asp:HyperLink ID="privacyLink" href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496"
+            runat="server">Amazon's Privacy and Disclaimers</asp:HyperLink>
+        <br />
+        <asp:HyperLink ID="surveyLink" href="SurveyPage.aspx"
+            runat="server">Go to Survey Page</asp:HyperLink>
     </div>
 
 </asp:Content>
