@@ -11,6 +11,22 @@ namespace Comp229_Assign02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+        }
+
+        protected void sendBtn_Click(object sender, EventArgs e)
+        {
+            Session["accessable"] = "true";
+
+            Session["Program"] = programTxt.Text;
+            Session["Fulltime"] = fulltimeTxt.Text;
+            Session["Semester"] = semesterTxt.Text;
+            Session["Student"] = student.Text;
+            Session["Email"] = emailTxt.Text;
+            Session["Comment"] = commentTxt.Text;
+
+            Response.Redirect("ThankYouPage.aspx");
 
         }
     }

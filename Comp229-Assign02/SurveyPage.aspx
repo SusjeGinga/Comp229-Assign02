@@ -1,36 +1,62 @@
 ﻿<%@ Page Title="Survey Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SurveyPage.aspx.cs" Inherits="Comp229_Assign02.SurveyPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <br />
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server"><h2>Student Information</h2></asp:PlaceHolder>
+        <br />
     <asp:Table ID="Table1" runat="server" Height="123px" Width="567px">
+
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">What program are you study?</asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="programTxt" Width="500" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="programTxtReq" ControlToValidate="programTxt" runat="server" 
+            </asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="programTxt" runat="server"
                     ErrorMessage="Required Field"></asp:RequiredFieldValidator>
             </asp:TableCell>
         </asp:TableRow>
 
         <asp:TableRow runat="server">
-            <asp:TableCell runat="server">What semester are you in?</asp:TableCell>
+            <asp:TableCell runat="server">Are you fulltime or parttime student?</asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem>4</asp:ListItem>
-                    <asp:ListItem>5</asp:ListItem>
-                    <asp:ListItem>6</asp:ListItem>
-                    <asp:ListItem>6+</asp:ListItem>
+                <asp:DropDownList ID="fulltimeTxt" runat="server">
+                    <asp:ListItem>Full time</asp:ListItem>
+                    <asp:ListItem>Part time</asp:ListItem>
                 </asp:DropDownList>
+            </asp:TableCell>
+                        <asp:TableCell runat="server">
+                <asp:RequiredFieldValidator ID="fulltimeTxtReq" ControlToValidate="fulltimeTxt" 
+                    runat="server"
+                    ErrorMessage="Required Field"></asp:RequiredFieldValidator>
+            </asp:TableCell>
+        </asp:TableRow>
+
+        
+        <asp:TableRow runat="server">
+            <asp:TableCell runat="server">Which semester are you in?</asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:TextBox ID="semesterTxt" TextMode="Number" Width="50" runat="server"></asp:TextBox>
+            </asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                    ErrorMessage="Input should be between 1 to 10 only" 
+                    ControlToValidate="semesterTxt" MaximumValue="10"
+                    MinimumValue="1" Type="Integer"></asp:RangeValidator>
             </asp:TableCell>
         </asp:TableRow>
 
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">Are you international student?</asp:TableCell>
             <asp:TableCell runat="server">
-                <asp:RadioButton GroupName="student" ID="RadioButton1" Text="Yes" runat="server" />
-                <asp:RadioButton GroupName="student" ID="RadioButton2" Text="No" runat="server" />
+                <asp:RadioButtonList ID="student" runat="server">
+                    <asp:ListItem>Yes</asp:ListItem>
+                    <asp:ListItem>No</asp:ListItem>
+                </asp:RadioButtonList>               
+            </asp:TableCell>
+               <asp:TableCell runat="server">
+                <asp:RequiredFieldValidator ID="studentReq" ControlToValidate="student" 
+                    runat="server"
+                    ErrorMessage="Required Field"></asp:RequiredFieldValidator>
             </asp:TableCell>
         </asp:TableRow>
 
@@ -38,13 +64,36 @@
             <asp:TableCell runat="server">Your email</asp:TableCell>
             <asp:TableCell runat="server">
                 <asp:TextBox ID="emailTxt" Width="500" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator ID="emailTxtReq" runat="server"                 
+            </asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
                     ErrorMessage="Email format is not correct" ControlToValidate="emailTxt"
-                    ValidationExpression="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$">
+                    ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$">
                 </asp:RegularExpressionValidator>
             </asp:TableCell>
         </asp:TableRow>
-
+        
     </asp:Table>
-
+    <br />
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server"><h2>Student's experience</h2></asp:PlaceHolder>
+        <br />
+            <asp:Table ID="Table2" runat="server" Height="123px" Width="567px">
+         <asp:TableRow runat="server">
+            <asp:TableCell runat="server">How do you feel about the college?</asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:TextBox ID="commentTxt" TextMode="MultiLine" Width="500" Height="300" runat="server"></asp:TextBox>
+            </asp:TableCell>
+             <asp:TableCell runat="server">
+                 <asp:RequiredFieldValidator ID="commentTxtReq" ControlToValidate="commentTxt" runat="server"
+                     ErrorMessage="Required Field"></asp:RequiredFieldValidator>
+             </asp:TableCell>
+         </asp:TableRow>
+        <asp:TableRow runat="server">
+            <asp:TableCell runat="server">
+            </asp:TableCell>
+            <asp:TableCell runat="server">
+                <asp:LinkButton class="btn btn-primary" OnClick="sendBtn_Click" runat="server">Send</asp:LinkButton>
+            </asp:TableCell>
+                </asp:TableRow>
+    </asp:Table>
 </asp:Content>
