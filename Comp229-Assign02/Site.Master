@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="container body-content">
-            <h3>
+            <h3 class="center">
                 <asp:Literal ID="titleLit" runat="server"></asp:Literal>
             </h3>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

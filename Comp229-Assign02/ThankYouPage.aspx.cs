@@ -11,7 +11,7 @@ namespace Comp229_Assign02
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //check session from survey page
             if (Session["accessable"] != null)
             {
                 string loadable = Session["accessable"].ToString();

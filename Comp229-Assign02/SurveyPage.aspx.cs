@@ -17,6 +17,7 @@ namespace Comp229_Assign02
 
         protected void sendBtn_Click(object sender, EventArgs e)
         {
+            //Create session to pass to thank you page
             Session["accessable"] = "true";
 
             Session["Program"] = programTxt.Text;

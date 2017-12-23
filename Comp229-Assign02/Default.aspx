@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Comp229_Assign02._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <asp:Image ID="brandImg" runat="server" ImageUrl="~/Assets/brand.jpg" />
+    <%--body of the page--%>
+    <div class="banner">
+        <asp:Image runat="server" ImageUrl="~/Assets/brand.jpg" />
+    </div>
 
     <div class="center">
+        
+        <br />
         <asp:PlaceHolder ID="welcomePL" runat="server">
             <h3>Welcome to Centennial Survey Page</h3>
         </asp:PlaceHolder>
